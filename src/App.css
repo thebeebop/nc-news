@@ -1,38 +1,54 @@
-.App {
+App{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li {
+  list-style-type: none;
+}
+header {
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 47px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+#loading {
+  text-align: center;
+}
+#list-container {
+  padding-left: 30px;
+  padding-right: 30px;
+  display: grid;
+  grid-template-columns: auto;
+  column-gap: 30px;
+  row-gap: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.articles {
+  border-style: dotted;
+  border-width: 3px;
+  border-color: black;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding:30px
 }
-
-.App-link {
-  color: #61dafb;
+#article-title {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#article-topic {
+  font-size: medium;
+  color: rgb(230, 113, 250);
+  margin-bottom: 30px;
+}
+#article-body {
+  margin-bottom: 20px;
+}
+#article-author {
+  font-weight: 20px;
+}
+#article-comments {
+  margin-top: 50px;
+  margin-bottom: 0;
 }
