@@ -15,7 +15,7 @@ function Articles() {
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <p id="loading">Loading...</p>;
   }
   return (
     <ul id="list-container">
