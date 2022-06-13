@@ -5,50 +5,88 @@ li {
   list-style-type: none;
 }
 header {
-  text-align: center;
-  padding: 30px;
-  margin-bottom: 20px;
+  height: 65px;
+  background-color: #FF312E;
+  padding-top: 15px;
+  padding-left: 20px;
+  margin-bottom: 30px;
 }
 h1 {
-  font-size: 47px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-family: 'Work Sans', sans-serif;
+  /* font-family: 'Cinzel', serif; */
+  /* font-family: 'Raleway', sans-serif; */
+  
+  color: #FDFFFC;
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 0px;
+}
+h2 {
+  font-weight:light;
+  color:#E8D33F;
+  font-size: 10px;
 }
 #loading {
   text-align: center;
 }
 #list-container {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 0px;
+  padding-right: 0px;
   display: grid;
   grid-template-columns: auto;
-  column-gap: 30px;
-  row-gap: 30px;
+  /* column-gap: 30px;
+  row-gap: 30px; */
 }
 
 .articles {
-  border-style: dotted;
-  border-width: 3px;
-  border-color: black;
+  border-style: hidden hidden solid hidden;
+  border-width: 20px;
+  border-color: rgb(237, 236, 236);
 
   padding:30px
 }
 #article-title {
   font-weight: bold;
   margin-bottom: 10px;
+  color: #020100
 }
-#article-topic {
+#article-topic-cooking {
   font-size: medium;
-  color: rgb(230, 113, 250);
+  color: #C200FB;
   margin-bottom: 30px;
 }
+
+#article-topic-coding {
+  font-size: medium;
+  color: #FFBC0A;
+  margin-bottom: 30px;
+}
+
+#article-topic-football {
+  font-size: medium;
+  color: #FF312E;
+  margin-bottom: 30px;
+}
+
 #article-body {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 #article-author {
   font-weight: 20px;
 }
 #article-comments {
-  margin-top: 50px;
+
   margin-bottom: 0;
+}
+#article-created_at {
+  color: #cbcbcb;
+  margin-bottom: 25px;
+}
+
+#article-author-comments {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
 }
