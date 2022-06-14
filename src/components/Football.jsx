@@ -1,20 +1,20 @@
 import { useState, useEffect } from "react";
 import { getArticles } from "../utils/api";
-import { useParams, useSearchParams } from "react-router-dom";
 
-function Articles() {
+function Football() {
   const [articles, setArticles] = useState([]);
   const [loading, isLoading] = useState(true);
-  const { topic } = useParams();
 
-  //conditional rendering??
-  // pass query into getArticles
   useEffect(() => {
-    getArticles(topic).then(({ articles }) => {
-      setArticles(articles);
+    getArticles().then(({ articles }) => {
+      // Filter data
+      const copyArticles = articles.filter(
+        (article) => article.topic === "football"
+      );
+      setArticles(copyArticles);
       isLoading(false);
     });
-  }, [topic]);
+  }, []);
 
   if (loading) {
     return <p id="loading">Loading...</p>;
@@ -66,4 +66,4 @@ function Articles() {
   );
 }
 
-export default Articles;
+export default Football;
