@@ -2,8 +2,9 @@ import "./App.css";
 import Header from "./components/Header";
 import SubHeader from "./components/SubHeader";
 import Articles from "./components/Articles";
+import Article from "./components/Article";
 import NavBar from "./components/Nav";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
         ></Route>
         <Route
           path="/articles/:topic/:article_id"
-          element={<Articles />}
+          element={<Article />}
         ></Route>
       </Routes>
     </div>
