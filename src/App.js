@@ -2,8 +2,9 @@ import "./App.css";
 import Header from "./components/Header";
 import SubHeader from "./components/SubHeader";
 import Articles from "./components/Articles";
+import Article from "./components/Article";
 import NavBar from "./components/Nav";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -12,14 +13,13 @@ function App() {
         <Header />
       </header>
       <NavBar />
-      <SubHeader />
+
       <Routes>
         <Route
           path="/articles/home"
           element={
             <div>
               <Articles />
-              <SubHeader />
             </div>
           }
         ></Route>
@@ -28,9 +28,12 @@ function App() {
           element={
             <div>
               <Articles />
-              <SubHeader />
             </div>
           }
+        ></Route>
+        <Route
+          path="/articles/:topic/:article_id"
+          element={<Article />}
         ></Route>
       </Routes>
     </div>
