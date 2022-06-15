@@ -53,7 +53,7 @@ function Articles() {
               >
                 View Article
               </button>
-              <h6 id="article-comments">Comments: {article.comment_count}</h6>
+              <h6 id="article-comments">{article.comment_count} Comments</h6>
             </li>
           );
         })}
@@ -78,7 +78,7 @@ function Articles() {
           </div>
           <p id="single-article-body">{article.body}</p>
 
-          <h6 id="article-comments">Comments: {article.comment_count}</h6>
+          <h6 id="article-comments">{article.comment_count} Comments</h6>
         </li>
       </ul>
     );

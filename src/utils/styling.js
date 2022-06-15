@@ -25,8 +25,11 @@ export const topicCapitalise = (article) => {
 
 export const timeConfig = (article) => {
   let timeArr = article.created_at.split("");
-  timeArr.splice(10, 0, "-");
-  timeArr.splice(12, 0, "-");
+  timeArr.splice(10, 0, " ");
+  timeArr.splice(11, 1, " ");
+  timeArr.splice(10, 0, "");
+  timeArr.splice(12, 1, " ");
+
   let timeSplice = timeArr.slice(0, 18);
   let time = timeSplice.join("");
 
