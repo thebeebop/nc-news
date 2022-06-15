@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 import { getArticles } from "../utils/api";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function Articles() {
   const [articles, setArticles] = useState([]);
   const [loading, isLoading] = useState(true);
   const { topic } = useParams();
 
-  //conditional rendering??
-  // pass query into getArticles
   useEffect(() => {
     getArticles(topic).then(({ articles }) => {
       setArticles(articles);
@@ -35,9 +33,8 @@ function Articles() {
         // Topic data manipulation
         let topicArray = [];
         let strArray = article.topic.split("");
-        topicArray.push(strArray[0].toUpperCase());
-
-        strArray.shift();
+        let shift = strArray.shift();
+        topicArray.push(shift.toUpperCase());
         strArray.forEach((char) => {
           topicArray.push(char);
         });
@@ -52,11 +49,13 @@ function Articles() {
         return (
           <li key={article.article_id} className="articles">
             <div id="article-topic-time">
-              <h5 id={id}>{topicArray}</h5>
               <h6 id="article-created_at">{time}</h6>
             </div>
             <h3 id="article-title">{article.title}</h3>
-            <h6 id="article-author">Posted by: {article.author}</h6>
+            <div>
+              <h6 id="article-author">Posted by: {article.author}</h6>
+              <h5 id={id}>{topicArray}</h5>
+            </div>
             <p id="article-body">{article.body}</p>
             <h6 id="article-comments">Comments: {article.comment_count}</h6>
           </li>
