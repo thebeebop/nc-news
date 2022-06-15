@@ -66,6 +66,10 @@ h2 {
   padding:30px
 }
 
+.single-article {
+  padding:30px
+}
+
 #article-title {
   font-weight: bold;
   margin-bottom: 3px;
@@ -89,9 +93,11 @@ h2 {
   color: #29a8cf;
   margin-bottom: 30px;
 }
-
+#single-article-body {
+  margin-bottom:30px
+}
 #article-body {
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 
 #article-author {
@@ -118,7 +124,6 @@ h2 {
 
 #navbar {
   background-color:#4d375a;
-
   display: flex;
   justify-content: space-between;
   padding-top: 10px;
@@ -142,4 +147,21 @@ a:hover {
   color: #ffffff;
   border-width: 2px;
   margin-bottom:0px
+}
+
+#button-view-article {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+
+  background-color: #ffffff;
+  font-weight: bold;
+  font-size: medium;
+  border-style: hidden hidden hidden hidden;
+  /* border-width: 2px; */
+
+  color: #4d375a;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 40px;
 }

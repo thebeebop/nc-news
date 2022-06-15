@@ -12,6 +12,12 @@ export const getArticles = (topic) => {
     });
 };
 
+export const getArticleById = (article_id) => {
+  return articlesApi.get(`/articles/${article_id}`).then(({ data }) => {
+    return data;
+  });
+};
+
 export const getTopics = () => {
   return articlesApi.get("/topics").then(({ data }) => {
     return data;

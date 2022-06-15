@@ -12,14 +12,13 @@ function App() {
         <Header />
       </header>
       <NavBar />
-      <SubHeader />
+
       <Routes>
         <Route
           path="/articles/home"
           element={
             <div>
               <Articles />
-              <SubHeader />
             </div>
           }
         ></Route>
@@ -28,9 +27,12 @@ function App() {
           element={
             <div>
               <Articles />
-              <SubHeader />
             </div>
           }
+        ></Route>
+        <Route
+          path="/articles/:topic/:article_id"
+          element={<Articles />}
         ></Route>
       </Routes>
     </div>
