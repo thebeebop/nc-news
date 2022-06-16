@@ -30,8 +30,6 @@ export const incrementVote = (article_id, votes) => {
       inc_votes: votes,
     })
     .then(({ data }) => {
-      // console.log(data.update.votes, article_id, "<<< votes, article_id");
-
       return data.update;
     });
 };

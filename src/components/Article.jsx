@@ -7,7 +7,7 @@ import {
   timeConfig,
   bodyConfig,
 } from "../utils/styling";
-
+import Votes from "./Votes";
 function Article() {
   const [article, setArticle] = useState([]);
   const [loading, isLoading] = useState(true);
@@ -43,7 +43,8 @@ function Article() {
         <p id="single-article-body">{article.body}</p>
         <div id="mother-container">
           <div id="button-votes-container">
-            <h6 id="article-votes">{article.votes} Votes</h6>
+            {" "}
+            <Votes article={article} />
           </div>
 
           <h6 id="article-comments">• {article.comment_count} Comments</h6>
