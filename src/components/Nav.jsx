@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 import { getTopics } from "../utils/api";
-
+import { topicSlugCapitalised } from "../utils/styling";
 function NavBar() {
   const [topics, setTopics] = useState([]);
 
@@ -20,17 +20,10 @@ function NavBar() {
       </Link>
       {topics.map((topic) => {
         //Capitalizing the topic strings
-        let topicArray = [];
-        let strArray = topic.slug.split("");
-        let shift = strArray.shift();
-        topicArray.push(shift.toUpperCase());
-        strArray.forEach((char) => {
-          topicArray.push(char);
-        });
-
+        let topik = topicSlugCapitalised(topic);
         return (
           <Link className="nav" key={topic.slug} to={`/articles/${topic.slug}`}>
-            {topicArray.join("")}
+            {topik}
           </Link>
         );
       })}

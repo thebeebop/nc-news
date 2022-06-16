@@ -23,3 +23,13 @@ export const getTopics = () => {
     return data;
   });
 };
+
+export const incrementVote = (article_id, votes) => {
+  return articlesApi
+    .patch(`/articles/${article_id}`, {
+      inc_votes: votes,
+    })
+    .then(({ data }) => {
+      return data.update;
+    });
+};

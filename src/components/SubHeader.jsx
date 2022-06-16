@@ -1,19 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { topicCapitalised } from "../utils/styling";
 
-// Setting a sub-header under the navbar,that re-renders when a specific topic is selected.
-function SubHeader() {
-  const [topik, setTopik] = useState();
-  const { topic } = useParams();
+function SubHeader({ topic }) {
+  if (topic === undefined) {
+    topic = "Home";
+  }
 
-  useEffect(() => {
-    const topicAssign = () => {
-      setTopik(topic);
-      return topik;
-    };
-
-    topicAssign();
-  }, [topik]);
+  let topik = topicCapitalised(topic);
 
   return <h2 id="sub-header">{topik}</h2>;
 }
