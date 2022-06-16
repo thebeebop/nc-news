@@ -4,6 +4,7 @@ import SubHeader from "./components/SubHeader";
 import Articles from "./components/Articles";
 import Article from "./components/Article";
 import NavBar from "./components/Nav";
+import Home from "./components/Home";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -15,22 +16,8 @@ function App() {
       <NavBar />
 
       <Routes>
-        <Route
-          path="/articles/home"
-          element={
-            <div>
-              <Articles />
-            </div>
-          }
-        ></Route>
-        <Route
-          path="/articles/:topic"
-          element={
-            <div>
-              <Articles />
-            </div>
-          }
-        ></Route>
+        <Route path="/articles/home" element={<Home />}></Route>
+        <Route path="/articles/:topic" element={<Articles />}></Route>
         <Route
           path="/articles/:topic/:article_id"
           element={<Article />}

@@ -19,8 +19,29 @@ export const topicCapitalise = (article) => {
   strArray.forEach((char) => {
     topicArray.push(char);
   });
-
   return topicArray;
+};
+
+export const topicCapitalised = (topic) => {
+  let topicArray = [];
+  let strArray = topic.split("");
+  let shift = strArray.shift();
+  topicArray.push(shift.toUpperCase());
+  strArray.forEach((char) => {
+    topicArray.push(char);
+  });
+  return topicArray;
+};
+
+export const topicSlugCapitalised = (topic) => {
+  let topicArray = [];
+  let strArray = topic.slug.split("");
+  let shift = strArray.shift();
+  topicArray.push(shift.toUpperCase());
+  strArray.forEach((char) => {
+    topicArray.push(char);
+  });
+  return topicArray.join("");
 };
 
 export const timeConfig = (article) => {
@@ -28,7 +49,7 @@ export const timeConfig = (article) => {
   timeArr.splice(10, 0, " ");
   timeArr.splice(11, 1, " ");
   timeArr.splice(10, 0, "");
-  timeArr.splice(12, 1, " ");
+  timeArr.splice(10, 1, " ");
 
   let timeSplice = timeArr.slice(0, 18);
   let time = timeSplice.join("");

@@ -138,6 +138,7 @@ h2 {
 
 
 #navbar {
+  height: 45px;
   background-color:#4d375a;
   display: flex;
   justify-content: space-between;
@@ -151,10 +152,12 @@ h2 {
 }
 
 .nav {
+
   font-family: 'Work Sans', sans-serif;
   font-weight: 900;
   color: #fffefe;
   text-decoration: 0;
+  margin-bottom: 0px;
 }
 
 a:hover {
