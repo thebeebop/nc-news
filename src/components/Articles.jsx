@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getArticles, getArticleById } from "../utils/api";
+import { getArticles, getArticleById, incrementVote } from "../utils/api";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import {
@@ -8,11 +8,13 @@ import {
   timeConfig,
   bodyConfig,
 } from "../utils/styling";
+import Votes from "../components/Votes";
 
 function Articles() {
   const [articles, setArticles] = useState([]);
   const [loading, isLoading] = useState(true);
   const { topic } = useParams();
+  // const [votes, setVotes] = useState(0);
 
   useEffect(() => {
     getArticles(topic).then(({ articles }) => {
@@ -35,9 +37,7 @@ function Articles() {
 
         return (
           <li key={article.article_id} className="articles">
-            <div id="article-topic-time">
-              <h6 id="article-created_at">{time}</h6>
-            </div>
+            <h6 id="article-created_at">{time}</h6>
             <h3 id="article-title">{article.title}</h3>
             <div>
               <h6 id="article-author">Posted by: {article.author}</h6>
@@ -48,11 +48,11 @@ function Articles() {
               id="article-link"
               to={`/articles/${topic}/${article.article_id}`}
             >
-              View Article
+              Read More
             </Link>
-            <div id="article-comments-votes">
-              <h6 id="article-comments">{article.comment_count} Comments</h6>
-              <h6 id="article-votes">{article.votes} Votes</h6>
+            <div id="mother-container">
+              <Votes article={article} />
+              <h6 id="article-comments">• {article.comment_count} Comments</h6>
             </div>
           </li>
         );

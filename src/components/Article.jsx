@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getArticles, getArticleById } from "../utils/api";
+import { getArticles, getArticleById, incrementVote } from "../utils/api";
 import { useParams } from "react-router-dom";
 import {
   topicColor,
@@ -12,6 +12,7 @@ function Article() {
   const [article, setArticle] = useState([]);
   const [loading, isLoading] = useState(true);
   const { article_id } = useParams();
+  const [votes, setVotes] = useState(0);
 
   useEffect(() => {
     getArticleById(article_id).then(({ article }) => {
@@ -40,9 +41,12 @@ function Article() {
           <h5 id={id}>{topik}</h5>
         </div>
         <p id="single-article-body">{article.body}</p>
-        <div id="article-comments-votes">
-          <h6 id="article-comments">{article.comment_count} Comments</h6>
-          <h6 id="article-votes">{article.votes} Votes</h6>
+        <div id="mother-container">
+          <div id="button-votes-container">
+            <h6 id="article-votes">{article.votes} Votes</h6>
+          </div>
+
+          <h6 id="article-comments">• {article.comment_count} Comments</h6>
         </div>
       </li>
     </ul>

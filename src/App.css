@@ -63,11 +63,17 @@ h2 {
   border-style: hidden hidden solid hidden;
   border-width: 10px;
   border-color: #efe4f5;
-  padding:30px
+  padding-top:30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 15px
 }
 
 .single-article {
-  padding:30px
+  padding-top:30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 15px
 }
 
 #article-title {
@@ -94,10 +100,10 @@ h2 {
   margin-bottom: 30px;
 }
 #single-article-body {
-  margin-bottom:30px
+  margin-bottom:50px
 }
 #article-body {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 #article-author {
@@ -108,6 +114,7 @@ h2 {
 }
 
 #article-comments {
+  margin-top: 12px;
  margin-bottom: 0;
 }
 
@@ -122,10 +129,13 @@ h2 {
   justify-content: space-between;
 }
 
-#article-comments-votes {
-  display: flex;
-  justify-content: space-between;
+#article-votes {
+  margin-top: 12px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 0px;
 }
+
 
 #navbar {
   background-color:#4d375a;
@@ -167,6 +177,55 @@ a:hover {
   color: #4d375a;
   display: flex;
   justify-content: center;
-  margin: auto;
-  margin-bottom: 40px;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+#vote-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+#plus {
+  color: #4d375a;
+  background-color: white;
+  font-weight: bold;
+  font-size: 25px;
+  border-style: hidden hidden hidden hidden;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+#minus {
+  color: #4d375a;
+  background-color: white;
+  font-weight: bold;
+  font-size: 25px;
+  border-style: hidden hidden hidden hidden;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+#button-votes-container {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly
+}
+
+#mother-container {
+  height: 32px;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-style: solid hidden hidden hidden;
+   border-width: 1px;
+  display:flex;
+  justify-content: space-between;
+}
+
+#error {
+  font-size: 12px;
 }
