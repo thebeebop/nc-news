@@ -36,7 +36,7 @@ function Comments({ article_id }) {
                 {comment.votes} Votes
               </h4> */}
               <div id="comments-votes-container">
-                <button
+                {/* <button
                   id="plus"
                   onClick={(event) => {
                     setVotes((currCount) => {
@@ -45,9 +45,9 @@ function Comments({ article_id }) {
                   }}
                 >
                   +
-                </button>
+                </button> */}
                 <h6 id="comment-votes">{comment.votes + votes} Hits</h6>
-                <button
+                {/* <button
                   id="minus"
                   onClick={(event) => {
                     setVotes((currCount) => {
@@ -56,7 +56,7 @@ function Comments({ article_id }) {
                   }}
                 >
                   -
-                </button>
+                </button> */}
               </div>
             </li>
           );
