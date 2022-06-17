@@ -5,6 +5,7 @@ import Articles from "./components/Articles";
 import Article from "./components/Article";
 import NavBar from "./components/Nav";
 import Home from "./components/Home";
+import Comments from "./components/Comments";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -21,6 +22,10 @@ function App() {
         <Route
           path="/articles/:topic/:article_id"
           element={<Article />}
+        ></Route>
+        <Route
+          path="/articles/:topic/:article_id/comments"
+          element={<Comments />}
         ></Route>
       </Routes>
     </div>
