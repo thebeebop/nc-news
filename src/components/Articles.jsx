@@ -36,7 +36,11 @@ function Articles() {
   let number = 0;
   return (
     <div>
-      <SubHeader topic={topic} />
+      <div>
+        <SubHeader topic={topic} />
+        {loading != false ? <p>Loading...</p> : null}
+      </div>
+
       <ul id="list-container">
         {articles.map((article) => {
           number++;

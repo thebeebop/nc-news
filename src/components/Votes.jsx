@@ -27,7 +27,7 @@ function Votes({ article }) {
           +
         </button>
 
-        <h6 id="article-votes">{article.votes + votes} Votes</h6>
+        <h6 id="article-votes">{article.votes + votes} Hits</h6>
         <button
           id="minus"
           onClick={(event) => {
