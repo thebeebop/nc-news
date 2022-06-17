@@ -291,6 +291,13 @@ a:hover {
   padding-right: 30px
 }
 
+#comments-votes-container {
+  padding-left: 25px;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+
 #comment-list {
   padding:0px
 }
@@ -318,18 +325,20 @@ a:hover {
   font-size: 12px;
   font-weight: 10px;
   margin-top: 0px;
-  margin-bottom: 12px;
+  margin-bottom: 0px;
   color:#131322
 
 }
 
 #comment-votes {
+
   font-size: 15px;
   color:#4d375a;
   font-weight: 700;
-  margin-top: 15px;
+  margin-top: 20px;
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 15px;
 }
+
 
