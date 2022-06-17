@@ -8,7 +8,7 @@ li {
 
 header {
   height: 65px;
-  background-color: #1e1322;
+  background-color: #131322;
   padding-top: 15px;
   padding-left: 20px;
   margin-bottom: 0px;
@@ -18,14 +18,14 @@ header {
 
   font-family: 'Work Sans', sans-serif;
   padding-left: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: #000000;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #131322;
   font-size: 30px;
   font-weight: 900;
   border-style: hidden hidden solid hidden;
   border-width: 1px;
-  border-color: #020202;
+  border-color: #131322;
 
 }
 
@@ -59,27 +59,23 @@ h2 {
   grid-template-columns: auto;
 }
 
-.articles {
+ .articles {
   border-style: hidden hidden solid hidden;
-  border-width: 10px;
+  border-width: 5px;
   border-color: #efe4f5;
-  padding-top:30px;
+ 
+ }  
+
+.article-text {
   padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 15px
+  padding-right: 30px
 }
 
-.single-article {
-  padding-top:30px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 15px
-}
 
 #article-title {
   font-weight: bold;
   margin-bottom: 3px;
-  color: #020100
+  color: #131322
 }
 
 #article-topic-cooking {
@@ -91,7 +87,7 @@ h2 {
 #article-topic-coding {
   font-size: medium;
   color: #FFBC0A;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 #article-topic-football {
@@ -106,6 +102,13 @@ h2 {
   margin-bottom: 30px;
 }
 
+#article-id {
+  color:#131322;
+  text-align: right;
+ 
+  font-size: 100px;
+}
+
 #article-author {
   font-size: 12px;
   font-weight: 10px;
@@ -114,11 +117,13 @@ h2 {
 }
 
 #article-comments {
-  margin-top: 12px;
+color: #4d375a;
+margin-top: 15px;
  margin-bottom: 0;
 }
 
 #article-created_at {
+  padding-top:30px;
   font-size: small;
   color: #c1c0c0;
   margin-bottom: 10px;
@@ -130,7 +135,10 @@ h2 {
 }
 
 #article-votes {
-  margin-top: 12px;
+  
+  color: #131322;
+  font-weight: 700;
+  margin-top: 15px;
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 0px;
@@ -181,7 +189,7 @@ a:hover {
   display: flex;
   justify-content: center;
   margin-top: 40px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
 
 #vote-buttons {
@@ -195,7 +203,7 @@ a:hover {
   color: #4d375a;
   background-color: white;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 27px;
   border-style: hidden hidden hidden hidden;
   margin-left: 0px;
   margin-right: 0px;
@@ -206,7 +214,7 @@ a:hover {
   color: #4d375a;
   background-color: white;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 29px;
   border-style: hidden hidden hidden hidden;
   margin-left: 0px;
   margin-right: 0px;
@@ -214,21 +222,125 @@ a:hover {
 }
 
 #button-votes-container {
+  padding-left:30px;
   text-align: center;
   display: flex;
   justify-content: space-evenly
 }
 
 #mother-container {
-  height: 32px;
+  
+  height: -60px;
   padding-left: 0px;
   padding-right: 0px;
-  border-style: solid hidden hidden hidden;
+  border-style: solid hidden solid hidden;
    border-width: 1px;
-  display:flex;
+   display:flex;
   justify-content: space-between;
+  margin-bottom: px;
 }
 
 #error {
   font-size: 12px;
 }
+
+#comments-button {
+  margin-right: 20px;
+  border-style: hidden hidden hidden hidden;
+ font-weight: 700;
+  color: #1e1322;
+  background-color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-right: 10px;
+}
+
+#line-seperator {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #e7e7e7;
+  height: 25px;
+  width: 2px;
+}
+
+
+#comments-heading {
+  font-family: 'Work Sans', sans-serif;
+  padding-left: 30px;
+  color: #131322;
+  font-size: 25px;
+  font-weight: 900;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 30px;
+}
+.individual-comment {
+  border-style: solid hidden hidden hidden;
+  border-width: 1px;
+}
+
+#comments-container {
+  border-style: solid hidden hidden hidden;
+  border-width: 1px;
+  margin-bottom: 10 px;
+
+}
+
+.comments {
+  padding-left: 30px;
+  padding-right: 30px
+}
+
+#comments-votes-container {
+  padding-left: 25px;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+
+#comment-list {
+  padding:0px
+}
+
+
+#comment-author {
+  font-size: 18px;
+  font-weight: 10px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  color:#131322
+
+}
+
+#comment-created_at {
+  font-size: 10px;
+  font-weight: 10px;
+  margin-top: 0px;
+  margin-bottom: 12px;
+  color:#a4a4a4
+
+}
+
+#comment-body {
+  font-size: 12px;
+  font-weight: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color:#131322
+
+}
+
+#comment-votes {
+
+  font-size: 15px;
+  color:#4d375a;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 15px;
+}
+
+
+
+
