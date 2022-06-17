@@ -43,11 +43,12 @@ export const getComments = (article_id) => {
 export const postComment = (article_id, author, body) => {
   return articlesApi
     .post(`articles/${article_id}/comments`, {
-      auhtor: author,
+      author: author,
       body: body,
       votes: 0,
     })
     .then(({ data }) => {
+      console.log(data, "<<<from API");
       return data;
     });
 };

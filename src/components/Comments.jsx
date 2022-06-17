@@ -12,6 +12,7 @@ function Comments({ article_id }) {
     });
   }, []);
 
+  //   console.log(article_id, "<<< from comments");
   return (
     <ul id="comment-list">
       <div id="comments-container">
@@ -30,7 +31,7 @@ function Comments({ article_id }) {
                 {comment.body}
               </h3>
               <h4 className="comments" id="comment-votes">
-                {comment.votes} Votes
+                {comment.votes} Hits
               </h4>
             </li>
           );
