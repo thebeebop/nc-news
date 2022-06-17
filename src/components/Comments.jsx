@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { getComments } from "../utils/api";
 import { timeConfig } from "../utils/styling";
-import Article from "./Article";
 
+import PostComment from "../components/PostComment";
 function Comments({ article_id }) {
   const [comments, setComments] = useState([]);
 
@@ -35,6 +35,7 @@ function Comments({ article_id }) {
             </li>
           );
         })}
+        <PostComment article_id={article_id} comments={comments} />
       </div>
     </ul>
   );
