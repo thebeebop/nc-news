@@ -5,19 +5,26 @@ function PostComment(article_id, comments) {
   const [commentBody, setCommentBody] = useState("");
   const [author, setAuthor] = useState("Elton John");
   const [updateCommentList, setUpdateCommentList] = useState([]);
-
-  // optimistic renderring
-  const handleSubmit = (event) => {
-    let fakeComment = {
+  const [fakeComment, setFakeComment] = useState([
+    {
       author: author,
       body: "",
       created_at: "< 1 min ago",
       votes: 0,
-    };
+    },
+  ]);
 
+  // optimistic renderring
+  const handleSubmit = (event) => {
     event.preventDefault();
     setUpdateCommentList((comments) => {
       return [...comments, fakeComment];
+    });
+    setFakeComment({
+      author: author,
+      body: "",
+      created_at: "< 1 min ago",
+      votes: 0,
     });
   };
 
@@ -33,10 +40,11 @@ function PostComment(article_id, comments) {
         <button type="submit">Post</button>
       </form>
       <input
+        type="text"
         value={commentBody}
         onChange={(event) => {
+          fakeComment.body = event.target.value;
           setCommentBody(event.target.value);
-          console.log(commentBody);
         }}
         placeholder="Write comment here..."
       ></input>
