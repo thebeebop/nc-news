@@ -6,29 +6,17 @@ function PostComment(article_id, comments) {
   const [author, setAuthor] = useState("jessjelly");
   const [disableButton, setDisableButton] = useState(false);
   const [commentSubmitted, setCommentSubmitted] = useState(false);
-  // if error re-enable button on upon error.
-  //disable button on click
+  // if error, re-enable button on upon error.
+  //disable button on-click
 
-  // const [updateCommentList, setUpdateCommentList] = useState([]);
-  // const [fakeComment, setFakeComment] = useState([
-  //   {
-  //     author: author,
-  //     body: "",
-  //     created_at: "< 1 min ago",
-  //     votes: 0,
-  //   },
-  // ]);
-
-  // console.log(commentBody, "<<commentBody");
-
-  // console.log(article_id.article_id, "<<<article-id");
-  // const handleSubmit = (event) => {
-  //   // optimistic renderring
-  //   event.preventDefault();
-  //   setUpdateCommentList((comments) => {
-  //     return [...comments, fakeComment];
-  //   });
-  // };
+  const [fakeComment, setFakeComment] = useState([
+    {
+      author: author,
+      body: commentBody,
+      created_at: "< 1 min ago",
+      votes: 0,
+    },
+  ]);
 
   return (
     <div>

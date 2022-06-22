@@ -10,7 +10,7 @@ function Comments({ article_id }) {
     getComments(article_id).then(({ comments }) => {
       setComments(comments);
     });
-  }, []);
+  }, [comments]);
 
   //   console.log(article_id, "<<< from comments");
   return (
