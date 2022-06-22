@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { getComments } from "../utils/api";
 import { timeConfig } from "../utils/styling";
 
+
 import PostComment from "../components/PostComment";
 function Comments({ article_id }) {
   const [comments, setComments] = useState([]);
+  const [votes, setVotes] = useState(0);
 
   useEffect(() => {
     getComments(article_id).then(({ comments }) => {
@@ -30,9 +32,11 @@ function Comments({ article_id }) {
               <h3 className="comments" id="comment-body">
                 {comment.body}
               </h3>
+
               <h4 className="comments" id="comment-votes">
                 {comment.votes} Hits
               </h4>
+
             </li>
           );
         })}

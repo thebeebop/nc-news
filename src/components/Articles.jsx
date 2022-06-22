@@ -39,6 +39,9 @@ function Articles() {
     <div>
       <div>
         <SubHeader topic={topic} />
+
+        {loading != false ? <p>Loading...</p> : null}
+
       </div>
 
       <ul id="list-container">
