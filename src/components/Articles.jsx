@@ -11,6 +11,7 @@ import {
 import Votes from "../components/Votes";
 import SubHeader from "./SubHeader";
 import Comments from "./Comments";
+import PostComment from "../components/PostComment";
 
 function Articles() {
   const [articles, setArticles] = useState([]);
@@ -38,7 +39,9 @@ function Articles() {
     <div>
       <div>
         <SubHeader topic={topic} />
+
         {loading != false ? <p>Loading...</p> : null}
+
       </div>
 
       <ul id="list-container">
@@ -93,7 +96,9 @@ function Articles() {
                 </button>
               </div>
               {areCommentsVisible ? (
-                <Comments article_id={article.article_id} />
+                <div>
+                  <Comments article_id={article.article_id} />
+                </div>
               ) : null}
             </li>
           );
