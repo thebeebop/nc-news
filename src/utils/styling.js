@@ -46,12 +46,13 @@ export const topicSlugCapitalised = (topic) => {
 
 export const timeConfig = (article) => {
   let timeArr = article.created_at.split("");
-  timeArr.splice(10, 0, " ");
-  timeArr.splice(11, 1, " ");
-  timeArr.splice(10, 0, "");
-  timeArr.splice(10, 1, " ");
 
-  let timeSplice = timeArr.slice(0, 18);
+  let timeSplice = timeArr.slice(0, 10);
+  let timeReverse = [];
+
+  for (let i = 0; i < timeSplice.length; i++) {
+    timeReverse.unshift(timeSplice[i]);
+  }
   let time = timeSplice.join("");
 
   return time;

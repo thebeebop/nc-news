@@ -2,7 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 
 import { useEffect, useState } from "react";
-import { getTopics } from "../utils/api";
+import { getTopics, getUsers } from "../utils/api";
 import { topicSlugCapitalised } from "../utils/styling";
 function NavBar() {
   const [topics, setTopics] = useState([]);
