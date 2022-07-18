@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
-import { getArticles, getArticleById, incrementVote } from "../utils/api";
-import { useParams } from "react-router-dom";
+import {
+  getArticles,
+  getArticleById,
+  incrementVote,
+  deleteComment,
+} from "../utils/api";
+import { useParams, Link } from "react-router-dom";
 import {
   topicColor,
   topicCapitalise,
@@ -10,12 +15,15 @@ import {
 import Votes from "./Votes";
 import SubHeader from "./SubHeader";
 import Comments from "./Comments";
+import { IoChatboxOutline, IoChevronBackCircleSharp } from "react-icons/io5";
+import Loading from "../components/Loading";
 function Article() {
   const [article, setArticle] = useState([]);
   const [loading, isLoading] = useState(true);
   const { article_id } = useParams();
   let { topic } = useParams();
-  const [areCommentsVisible, setAreCommentsVisible] = useState(false);
+  const [areCommentsVisible, setAreCommentsVisible] = useState(true);
+
   useEffect(() => {
     getArticleById(article_id).then(({ article }) => {
       setArticle(article);
@@ -23,9 +31,13 @@ function Article() {
     });
   }, [article_id]);
 
-  if (loading) {
-    return <p id="loading">Loading...</p>;
-  }
+  if (loading)
+    return (
+      <div id="spinner">
+        <Loading />
+        <h3>Be with you shortly...</h3>
+      </div>
+    );
 
   const flipAreCommentsVisibleBoolean = () => {
     setAreCommentsVisible((currBool) => !currBool);
@@ -36,53 +48,61 @@ function Article() {
   let time = timeConfig(article); // Time data re-configure
 
   return (
-    <div>
-      <SubHeader topic={topic} />
-      <ul id="list-container">
+    <div id="mother-article-container">
+      <div id="single-article-header">
+        <SubHeader id="subheader-link" topic={topic} />
+
+        <Link to={`/articles/${topic}`}>
+          <IoChevronBackCircleSharp id="go-back-button" />
+        </Link>
+      </div>
+
+      <ul id="list-container-2">
         <li key={article.article_id}>
-          <div id="article-topic-time">
-            <h6 className="article-text" id="article-created_at">
-              {time}
-            </h6>
-          </div>
+          <div id="article-topic-time"></div>
           <h3 className="article-text" id="article-title">
             {article.title}
           </h3>
 
           <h5 className="article-text" id="article-author">
-            Posted by: {article.author}
+            by: {article.author}
           </h5>
+          <h6 className="article-text" id="article-created_at">
+            on {time}
+          </h6>
           <h6 className="article-text" id={id}>
             {topik}
           </h6>
 
-          <h6 className="article-text" id="article-id">
-            {/* {article.article_id} */}
-          </h6>
+          <h6 className="article-text" id="article-id"></h6>
 
           <p className="article-text" id="single-article-body">
             {article.body}
           </p>
-          <div id="mother-container">
+
+          <div id="mother-container-2">
             <Votes article={article} />
             <div>
               <div id="line-seperator"></div>
             </div>
-            <button
-              id="comments-button"
-              onClick={(event) => {
-                flipAreCommentsVisibleBoolean();
-              }}
-            >
-              • {article.comment_count} Comments
-            </button>
+            <Link to={`/articles/${topic}/${article.article_id}`}>
+              <div id="comments">
+                <IoChatboxOutline id="comment-img" />
+                <button
+                  id="comments-button"
+                  onClick={(event) => {
+                    flipAreCommentsVisibleBoolean();
+                  }}
+                >
+                  {article.comment_count} Comments
+                </button>
+              </div>
+            </Link>
           </div>
-
-          {areCommentsVisible ? (
-            <Comments article_id={article.article_id} />
-          ) : null}
         </li>
       </ul>
+      <div id="empty-space"></div>
+      {areCommentsVisible ? <Comments article_id={article.article_id} /> : null}
     </div>
   );
 }

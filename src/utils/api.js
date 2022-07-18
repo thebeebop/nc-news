@@ -4,9 +4,14 @@ const articlesApi = axios.create({
   baseURL: "https://nc-info-site.herokuapp.com/api",
 });
 
-export const getArticles = (topic) => {
+export const getArticles = (topic, sortBy, order) => {
+  if (topic === "home") {
+    topic = undefined;
+  }
   return articlesApi
-    .get("/articles", { params: { topic: topic } })
+    .get("/articles", {
+      params: { topic: topic, sort_by: sortBy, order: order },
+    })
     .then(({ data }) => {
       return data;
     });
@@ -20,6 +25,12 @@ export const getArticleById = (article_id) => {
 
 export const getTopics = () => {
   return articlesApi.get("/topics").then(({ data }) => {
+    return data;
+  });
+};
+
+export const getUsers = () => {
+  return articlesApi.get("/users").then(({ data }) => {
     return data;
   });
 };
@@ -48,7 +59,10 @@ export const postComment = (article_id, author, body) => {
       votes: 0,
     })
     .then(({ data }) => {
-      console.log(data, "<<<from API");
       return data;
     });
+};
+
+export const deleteComment = (comment_id) => {
+  return articlesApi.delete(`comments/${comment_id}`);
 };

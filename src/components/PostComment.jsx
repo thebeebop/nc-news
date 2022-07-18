@@ -1,27 +1,21 @@
+import { hasSelectionSupport } from "@testing-library/user-event/dist/utils";
 import { useState } from "react";
 import { postComment } from "../utils/api";
+import { userContext } from "../contexts";
+import { useContext } from "react";
 
-function PostComment(article_id, comments) {
+function PostComment(article_id) {
   const [commentBody, setCommentBody] = useState("");
-  const [author, setAuthor] = useState("jessjelly");
+
   const [disableButton, setDisableButton] = useState(false);
   const [commentSubmitted, setCommentSubmitted] = useState(false);
-  // if error, re-enable button on upon error.
-  //disable button on-click
-
-  const [fakeComment, setFakeComment] = useState([
-    {
-      author: author,
-      body: commentBody,
-      created_at: "< 1 min ago",
-      votes: 0,
-    },
-  ]);
+  const { user } = useContext(userContext);
+  let author = user;
 
   return (
-    <div>
-      <h1>POST A COMMENT</h1>
+    <div id="leave-comment-container">
       <form
+        id="comment-submit-form"
         onSubmit={(event) => {
           if (disableButton === false) {
             setCommentSubmitted(true);
@@ -34,23 +28,26 @@ function PostComment(article_id, comments) {
           }
         }}
       >
-        <button type="submit">Post</button>
-
-        <input
-          minLength="1"
-          type="text"
-          value={commentBody}
-          onChange={(event) => {
-            setCommentBody(event.target.value);
-            setCommentSubmitted(false);
-          }}
-          placeholder="Write comment here..."
-          required
-        ></input>
-
+        <div id="post-comment-div">
+          <input
+            id="comment-input"
+            minLength="1"
+            type="text"
+            value={commentBody}
+            onChange={(event) => {
+              setCommentBody(event.target.value);
+              setCommentSubmitted(false);
+            }}
+            placeholder="Write a comment..."
+            required
+          ></input>
+          <button id="post-comment-button" type="submit">
+            Post
+          </button>
+        </div>
         {commentSubmitted === true ? (
           <div>
-            <p>Comment Submitted</p>
+            <p id="comment-submitted">Comment Submitted!</p>
           </div>
         ) : null}
       </form>
