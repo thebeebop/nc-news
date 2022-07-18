@@ -123,7 +123,7 @@ header {
   
   #list-container {
     height: 100vh;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     padding-left: 0px;
     padding-right: 0px;
     display: grid;
