@@ -11,7 +11,7 @@ import UserLogin from "./components/UserLogin";
 
 function App() {
   const [user, setUser] = useState("jessjelly");
-  const [isPathToLogin, setIsPathToLogin] = useState(true);
+  const [isPathToLogin, setIsPathToLogin] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
