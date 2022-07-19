@@ -13,14 +13,21 @@ import SubHeader from "./SubHeader";
 import SortBy from "./SortBy";
 import { IoChatboxOutline } from "react-icons/io5";
 import Loading from "../components/Loading";
+
 function Articles() {
   const [articles, setArticles] = useState([]);
   const [loading, isLoading] = useState(true);
-  const { topic } = useParams();
+  let { topic } = useParams();
   const [areCommentsVisible, setAreCommentsVisible] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
+
   let sortBy = searchParams.get("sort_by");
   let order = searchParams.get("order");
+
+  if (topic === undefined) {
+    topic = "home";
+  }
+  console.log(topic, "<<<< topic");
 
   useEffect(() => {
     getArticles(topic, sortBy, order).then(({ articles }) => {
