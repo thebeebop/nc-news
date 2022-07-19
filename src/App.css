@@ -164,25 +164,25 @@ header {
   #article-topic-cooking {
     font-size: medium;
     color: #880eca;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
   }
   
   #article-topic-coding {
     font-size: medium;
     color: #FFBC0A;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
   }
   
   #article-topic-football {
     font-size: medium;
     color: #29a8cf;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
   }
   #single-article-body {
     margin-bottom:50px
   }
   #article-body {
-    margin-bottom: 30px;
+    margin-bottom: 0px;
   }
   
   
@@ -227,15 +227,20 @@ header {
     padding-top: 40px;
     padding-right: 30px;
     padding-left: 10px;
+    padding-bottom: 0px;
     color:#131322;
+    margin-bottom: 0px;
   
    
-    font-size: 60px;
+    font-size: 30px;
   }
   
   #article-number-container {
+    height: 60px;
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 10px;
   
   }
   
@@ -243,7 +248,8 @@ header {
     font-weight: 600;
     font-size: 15px;
     margin-left: 30px;
-    margin-top: 80px;
+    margin-top: 40px;
+    margin-bottom: 0px;
   }
   
   
