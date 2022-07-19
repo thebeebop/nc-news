@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { userContext } from "../contexts";
 import { getUsers } from "../utils/api";
-import { IoHomeSharp } from "react-icons/io5";
-import { FaRegUserCircle } from "react-icons/fa";
+import { IoChevronBackCircleSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Profile from "./Profile";
 function UserLogin({ setUser, setIsPathToLogin, setIsLoggedIn, isLoggedIn }) {
@@ -18,8 +17,6 @@ function UserLogin({ setUser, setIsPathToLogin, setIsLoggedIn, isLoggedIn }) {
     });
   }, []);
 
-  //   if (isLoading) return <p>Loading...</p>;
-
   return (
     <div>
       <div id="top-box"></div>
@@ -30,7 +27,7 @@ function UserLogin({ setUser, setIsPathToLogin, setIsLoggedIn, isLoggedIn }) {
             setIsPathToLogin(false);
           }}
         >
-          <IoHomeSharp id="home-button" />
+          <IoChevronBackCircleSharp id="go-back-to-home-button" />
         </Link>
       </div>
       <div id="empty-box"></div>

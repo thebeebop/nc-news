@@ -749,7 +749,7 @@ background-color: #4d375a;
   
   #empty-box {
     display: flex;
-    height: 60px;
+    height: 20px;
   }
   
   #form-login{
@@ -797,7 +797,7 @@ background-color: #4d375a;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 30px;
+    margin-right: 0px;
   }
   
   #home-button {
@@ -860,6 +860,18 @@ background-color: #4d375a;
   background-color: #131322;
   border-style: hidden hidden hidden hidden;
 
+
+}
+
+#go-back-to-home-button {
+  align-content: center;
+  position: relative;
+  z-index:2;
+  height: 40px;
+    width: 40px;
+    margin-top: 0px;
+    margin-right: 0px;
+    color: #ffffff;
 
 }
 
