@@ -24,16 +24,14 @@ function UserLogin({ setUser, setIsPathToLogin, setIsLoggedIn, isLoggedIn }) {
     <div>
       <div id="top-box"></div>
       <div id="home-button-box">
-        {isLoggedIn ? (
-          <Link
-            to="/articles/home"
-            onClick={() => {
-              setIsPathToLogin(false);
-            }}
-          >
-            <IoHomeSharp id="home-button" />
-          </Link>
-        ) : null}
+        <Link
+          to="/articles/home"
+          onClick={() => {
+            setIsPathToLogin(false);
+          }}
+        >
+          <IoHomeSharp id="home-button" />
+        </Link>
       </div>
       <div id="empty-box"></div>
       <div id="user-login-box">
