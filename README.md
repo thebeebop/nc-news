@@ -13,6 +13,9 @@ As a user, you have the ability to filter articles by topic, upvote or downvote,
 ## Link to Website & API
 Website: https://the-daily-dose-nc.netlify.app/            API:https://github.com/thebeebop/BE-PROJECT
 
+## IMPORTANT
+To run this locally on your machine you must have node version 17.8.0 or above. 
+
 
 
 
