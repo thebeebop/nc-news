@@ -8,12 +8,12 @@ Therefore, upon opening the app you will have been assigned a default user with 
 
 As a user, you have the ability to filter articles by topic, upvote or downvote, and leave a comment on a specified article.
 
-## Link to Website
-https://the-daily-dose-nc.netlify.app/
+## Link to Website & API
+Website:https://the-daily-dose-nc.netlify.app/  API:https://github.com/thebeebop/BE-PROJECT
 
-## Link to API
-The API used for this application was created during my back-end project when studying with Northcoders:
-https://github.com/thebeebop/BE-PROJECT
+
+
+
 
 
 
