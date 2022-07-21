@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# The Daily Dose (Northcoders News) 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A social news aggregation, web content rating, 
+and discussion website. Built in Javascript using React.
 
 ## Available Scripts
 
