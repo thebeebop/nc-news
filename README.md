@@ -6,4 +6,7 @@ and discussion website. Built in Javascript using React.
 https://the-daily-dose-nc.netlify.app/
 
 ## Link to API
+The API used for this application was created during my back-end project when studying with Northcoders:
+https://github.com/thebeebop/BE-PROJECT
+
 
