@@ -17,6 +17,12 @@ Website: https://the-daily-dose-nc.netlify.app/            API:https://github.co
 ## IMPORTANT
 To run this locally on your machine you must have node version 17.8.0 or above. 
 
+## Instructions for using repo locally:
+
+1. Install locally by running git clone + 'code URL' (located in this repo) in your terminal.
+2. Before running, make sure to install all dependencies locally by running the command 'npm i' in your terminal.
+3. Finally, to open the react app, run the command 'npm start'.
+
 
 
 
