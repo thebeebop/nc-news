@@ -1,6 +1,7 @@
 # The Daily Dose (Northcoders News) 
 A social news aggregation, web content rating, 
 and discussion website. Built in Javascript using React.
+This app was created during the Northcoder's 'front-end project' phase.
 
 The API used for this application was created during my back-end project when studying with Northcoders:
 
