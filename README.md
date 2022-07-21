@@ -1,5 +1,5 @@
 # The Daily Dose (Northcoders News) 
-A social news aggregation, web content rating, 
+A fully responsive, social news aggregation, web content rating, 
 and discussion website. Built in Javascript using React.
 This app was created during the Northcoder's 'front-end project phase'.
 
