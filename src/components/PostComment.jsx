@@ -4,7 +4,7 @@ import { postComment } from "../utils/api";
 import { userContext } from "../contexts";
 import { useContext } from "react";
 
-function PostComment(article_id) {
+function PostComment({ article_id, comments, setComments }) {
   const [commentBody, setCommentBody] = useState("");
 
   const [disableButton, setDisableButton] = useState(false);
@@ -21,7 +21,8 @@ function PostComment(article_id) {
             setCommentSubmitted(true);
             setDisableButton(true);
             event.preventDefault();
-            postComment(article_id.article_id, author, commentBody).then(() => {
+            setCommentBody({ author: author, body: commentBody });
+            postComment(article_id, author, commentBody).then(() => {
               setDisableButton(false);
               setCommentBody("");
             });

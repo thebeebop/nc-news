@@ -104,7 +104,11 @@ function Comments({ article_id, handleClick }) {
             : null}
         </ul>
 
-        <PostComment article_id={article_id} comments={commentz} />
+        <PostComment
+          article_id={article_id}
+          comments={commentz}
+          setComments={setComments}
+        />
       </div>
     </section>
   );
